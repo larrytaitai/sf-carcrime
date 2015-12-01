@@ -25,7 +25,9 @@
   <body >
     
     <div id = 'chart7ce7037cf7e' class = 'rChart nvd3'></div>   
-    <div id = 'chart7ce1f1abce2' class = 'rChart nvd3'></div>     
+    <div id = 'chart7ce1f1abce2' class = 'rChart nvd3'></div>  
+    <div id = 'chart7ce1ead1851' class = 'rChart nvd3'></div>    
+   
     <script type='text/javascript'>
  
  //************ First Chart Noe Valley ****************//
@@ -199,9 +201,13 @@
          
         chart
   .forceY([      0,   5000 ])
+  .margin({
+ "left":    100 
+})
           
         
-
+        chart.yAxis
+  .axisLabel("Number of incidents ")
         
         
         
@@ -387,11 +393,15 @@
          
         chart
   .forceY([      0,   5000 ])
+  .margin({
+ "left":    100 
+})
           
         
 
         
-        
+        chart.yAxis
+  .axisLabel("Number of incidents ")
         
       
        d3.select("#" + opts.id)
@@ -405,6 +415,18 @@
       });
     };
 </script>
+
+
+    // ************* Second Chart South of Market *************//
+
+
+
+
+
+
+
+
+
     
     <script></script>    
   </body>
