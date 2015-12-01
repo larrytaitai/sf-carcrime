@@ -1224,7 +1224,65 @@ $(document).ready(function(){
 
 </script>
 
+<script type="text/javascript">
+      function setIframeSource() {
+        var theSelect = document.getElementById('location');
+        var theIframe = document.getElementById('myIframe');
+        var theUrl;
+        
+        theUrl = theSelect.options[theSelect.selectedIndex].value;
+        theIframe.src = theUrl;
+      }
+    </script>
 
+
+
+      <label style="position:center">
+          Select Your Own Neighborhood:
+
+          <select name="location" id="location" onChange="setIframeSource()">
+            <option VALUE="Hoods/Western Addition.html">Western Addition</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/Visitacion Valley.html">Visitacion Valley</option>
+            <option VALUE="Hoods/Twin Peaks.html">Twin Peaks</option>
+            <option VALUE="Hoods/Treasure Island-YBI.html">Treasure Island-YBI</option>
+            <option VALUE="Hoods/South of Market.html">South of Market</option>
+            <option VALUE="Hoods/Seacliff.html">Seacliff</option>
+            <option VALUE="Hoods/Russian Hill.html">Russian Hill</option>
+            <option VALUE="Hoods/Presidio.html">Presidio</option>
+            <option VALUE="Hoods/Presidio Heights.html">Presidio Heights</option>
+            <option VALUE="Hoods/Potrero Hill.html">Potrero Hill</option>
+            <option VALUE="Hoods/Parkside.html">Parkside</option>
+            <option VALUE="Hoods/Pacific Heights.html">Pacific Heights</option>
+            <option VALUE="Hoods/Outer Sunset.html">Outer Sunset</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+            <option VALUE="Hoods/West of Twin Peaks.html">West of Twin Peaks</option>
+
+
+
+          </select>
+      </label>
+
+    <iframe id="myIframe" src="Hoods/Western Addition.html" width=100% height="725" frameborder="0" marginheight="0" marginwidth="0"></iframe>
 
 
 
