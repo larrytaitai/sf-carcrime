@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The changing face of America</title>
+
+    <style type="text/css">
+
+body {
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: #888;
+}
+
+a {
+  color: #888;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #000;
+}
+
+   </style>
+   
+		
+</head>
+
+<body>
+
+
+		<script type="text/javascript">
+			function setIframeSource() {
+				var theSelect = document.getElementById('location');
+				var theIframe = document.getElementById('myIframe');
+				var theUrl;
+				
+				theUrl = theSelect.options[theSelect.selectedIndex].value;
+				theIframe.src = theUrl;
+			}
+		</script>
+
+
+
+		<form id="form1" name="form1" method="post" action="">
+		<label style="position:relative; left:192px">
+			Select <a href="http://www.census.gov/population/projections/files/methodstatement09.pdf" target="blank">immigration scenario</a>:
+			<select name="location" id="location" onChange="setIframeSource()">
+  			<option VALUE="constant.html">Constant</option>
+  			<option VALUE="high.html">High</option>
+  			<option VALUE="high.html">High</option>
+  			</select>
+		</label>
+		</form>
+		<iframe id="myIframe" src="constant.html" width="700" height="725" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+<div id="logo">
+
+  <img style="position:absolute; top:0px; left:525px; padding:3px; width:125px" src="Images/NS_grey.png"  />
+  
+</div>
+
+</body>
+</html>
