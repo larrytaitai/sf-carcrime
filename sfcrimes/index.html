@@ -414,10 +414,211 @@
        return chart;
       });
     };
+
+
+
+
+    // ************* Third Chart Downtown Civic Center ************//
+
+
+
+    $(document).ready(function(){
+      drawchart7ce1ead1851()
+    });
+    function drawchart7ce1ead1851(){  
+      var opts = {
+ "dom": "chart7ce1ead1851",
+"width":    800,
+"height":    400,
+"x": "Year",
+"y": "Count",
+"group": "Type",
+"type": "lineChart",
+"id": "chart7ce1ead1851" 
+},
+        data = [
+ {
+ "Year": 2003,
+"Type": "Car break-in",
+"Count": 1023 
+},
+{
+ "Year": 2003,
+"Type": "Other",
+"Count": 3341 
+},
+{
+ "Year": 2004,
+"Type": "Car break-in",
+"Count": 958 
+},
+{
+ "Year": 2004,
+"Type": "Other",
+"Count": 3400 
+},
+{
+ "Year": 2005,
+"Type": "Car break-in",
+"Count": 1357 
+},
+{
+ "Year": 2005,
+"Type": "Other",
+"Count": 3443 
+},
+{
+ "Year": 2006,
+"Type": "Car break-in",
+"Count": 1686 
+},
+{
+ "Year": 2006,
+"Type": "Other",
+"Count": 2984 
+},
+{
+ "Year": 2007,
+"Type": "Car break-in",
+"Count": 1522 
+},
+{
+ "Year": 2007,
+"Type": "Other",
+"Count": 2836 
+},
+{
+ "Year": 2008,
+"Type": "Car break-in",
+"Count": 1038 
+},
+{
+ "Year": 2008,
+"Type": "Other",
+"Count": 2955 
+},
+{
+ "Year": 2009,
+"Type": "Car break-in",
+"Count": 916 
+},
+{
+ "Year": 2009,
+"Type": "Other",
+"Count": 2967 
+},
+{
+ "Year": 2010,
+"Type": "Car break-in",
+"Count": 678 
+},
+{
+ "Year": 2010,
+"Type": "Other",
+"Count": 2932 
+},
+{
+ "Year": 2011,
+"Type": "Car break-in",
+"Count": 656 
+},
+{
+ "Year": 2011,
+"Type": "Other",
+"Count": 3300 
+},
+{
+ "Year": 2012,
+"Type": "Car break-in",
+"Count": 870 
+},
+{
+ "Year": 2012,
+"Type": "Other",
+"Count": 3614 
+},
+{
+ "Year": 2013,
+"Type": "Car break-in",
+"Count": 1591 
+},
+{
+ "Year": 2013,
+"Type": "Other",
+"Count": 3866 
+},
+{
+ "Year": 2014,
+"Type": "Car break-in",
+"Count": 1698 
+},
+{
+ "Year": 2014,
+"Type": "Other",
+"Count": 4048 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .forceY([      0,   5000 ])
+  .margin({
+ "left":    100 
+})
+          
+        
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+
+
+
+        chart.yAxis
+  .axisLabel("Number of incidents ")
+
+  
 </script>
 
 
-    // ************* Second Chart South of Market *************//
 
 
 
