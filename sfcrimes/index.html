@@ -19,18 +19,427 @@
       width: 100%;
       height: 400px;
     }  
+
+    /* remove y axis */
+     .nv-axis path { display: none; }
+
+    /* set stroke width */
+    .nvd3 g.nv-groups path.nv-line {
+      stroke-width: 4px;
+    }
     </style>
     
   </head>
   <body >
-    
-    <div id = 'chart7ce7037cf7e' class = 'rChart nvd3'></div>   
+
+
+    <div>    San Francisco Car Burglary </div>
+    <div id = 'chart1395e6be849' class = 'rChart nvd3'></div>    
+
+
+    <div>    South of Market </div>
     <div id = 'chart7ce1f1abce2' class = 'rChart nvd3'></div>  
-    <div id = 'chart7ce1ead1851' class = 'rChart nvd3'></div>    
+    
+    <div>    Noe Valley </div>
+    <div id = 'chart7ce7037cf7e' class = 'rChart nvd3'></div>   
+    
+    <div>    Downtown Civic Center </div>
+    <div id = 'chart7ce1ead1851' class = 'rChart nvd3'></div>   
+    
+    <div>    Western Addition </div>
+    <div id = 'chart7ce70764787' class = 'rChart nvd3'></div>   
+
+    <div>    Mission District </div>
+    <div id = 'chart7ce5ffa6b64' class = 'rChart nvd3'></div>    
+ 
+ 
    
     <script type='text/javascript'>
+    //************** San Francisco in General **************//
+$(document).ready(function(){
+      drawchart1395e6be849()
+    });
+    function drawchart1395e6be849(){  
+      var opts = {
+ "dom": "chart1395e6be849",
+"width":    800,
+"height":    400,
+"x": "Year",
+"y": "Count",
+"group": "Type",
+"type": "lineChart",
+"id": "chart1395e6be849" 
+},
+        data = [
+ {
+ "Year": 2003,
+"Type": "Car break-in",
+"Count": 11220 
+},
+{
+ "Year": 2003,
+"Type": "Other",
+"Count": 36838 
+},
+{
+ "Year": 2004,
+"Type": "Car break-in",
+"Count": 10752 
+},
+{
+ "Year": 2004,
+"Type": "Other",
+"Count": 38670 
+},
+{
+ "Year": 2005,
+"Type": "Car break-in",
+"Count": 12235 
+},
+{
+ "Year": 2005,
+"Type": "Other",
+"Count": 38580 
+},
+{
+ "Year": 2006,
+"Type": "Car break-in",
+"Count": 14639 
+},
+{
+ "Year": 2006,
+"Type": "Other",
+"Count": 27248 
+},
+{
+ "Year": 2007,
+"Type": "Car break-in",
+"Count": 13153 
+},
+{
+ "Year": 2007,
+"Type": "Other",
+"Count": 24777 
+},
+{
+ "Year": 2008,
+"Type": "Car break-in",
+"Count": 11933 
+},
+{
+ "Year": 2008,
+"Type": "Other",
+"Count": 25854 
+},
+{
+ "Year": 2009,
+"Type": "Car break-in",
+"Count": 11268 
+},
+{
+ "Year": 2009,
+"Type": "Other",
+"Count": 25101 
+},
+{
+ "Year": 2010,
+"Type": "Car break-in",
+"Count": 9517 
+},
+{
+ "Year": 2010,
+"Type": "Other",
+"Count": 24450 
+},
+{
+ "Year": 2011,
+"Type": "Car break-in",
+"Count": 10054 
+},
+{
+ "Year": 2011,
+"Type": "Other",
+"Count": 25803 
+},
+{
+ "Year": 2012,
+"Type": "Car break-in",
+"Count": 12853 
+},
+{
+ "Year": 2012,
+"Type": "Other",
+"Count": 30790 
+},
+{
+ "Year": 2013,
+"Type": "Car break-in",
+"Count": 16138 
+},
+{
+ "Year": 2013,
+"Type": "Other",
+"Count": 32961 
+},
+{
+ "Year": 2014,
+"Type": "Car break-in",
+"Count": 18526 
+},
+{
+ "Year": 2014,
+"Type": "Other",
+"Count": 32918 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .forceY([      0,   5000 ])
+  .margin({
+ "left":    100 
+})
+          
+        
+
+        
+        
+        chart.yAxis
+  .axisLabel("Number of incidents ")
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+
+
+
  
- //************ First Chart Noe Valley ****************//
+    // ************* First Chart South of Market *************//
+
+    $(document).ready(function(){
+      drawchart7ce1f1abce2()
+    });
+        function drawchart7ce1f1abce2(){  
+      var opts = {
+ "dom": "chart7ce1f1abce2",
+// "width":    800,
+"height":    400,
+"x": "Year",
+"y": "Count",
+"group": "Type",
+"type": "lineChart",
+"id": "chart7ce1f1abce2" 
+},
+        data = [
+ {
+ "Year": 2003,
+"Type": "Car break-in",
+"Count": 2178 
+},
+{
+ "Year": 2003,
+"Type": "Other",
+"Count": 4002 
+},
+{
+ "Year": 2004,
+"Type": "Car break-in",
+"Count": 2462 
+},
+{
+ "Year": 2004,
+"Type": "Other",
+"Count": 4039 
+},
+{
+ "Year": 2005,
+"Type": "Car break-in",
+"Count": 2282 
+},
+{
+ "Year": 2005,
+"Type": "Other",
+"Count": 4055 
+},
+{
+ "Year": 2006,
+"Type": "Car break-in",
+"Count": 3123 
+},
+{
+ "Year": 2006,
+"Type": "Other",
+"Count": 3161 
+},
+{
+ "Year": 2007,
+"Type": "Car break-in",
+"Count": 2573 
+},
+{
+ "Year": 2007,
+"Type": "Other",
+"Count": 3352 
+},
+{
+ "Year": 2008,
+"Type": "Car break-in",
+"Count": 2062 
+},
+{
+ "Year": 2008,
+"Type": "Other",
+"Count": 3354 
+},
+{
+ "Year": 2009,
+"Type": "Car break-in",
+"Count": 2181 
+},
+{
+ "Year": 2009,
+"Type": "Other",
+"Count": 3597 
+},
+{
+ "Year": 2010,
+"Type": "Car break-in",
+"Count": 2157 
+},
+{
+ "Year": 2010,
+"Type": "Other",
+"Count": 3715 
+},
+{
+ "Year": 2011,
+"Type": "Car break-in",
+"Count": 2022 
+},
+{
+ "Year": 2011,
+"Type": "Other",
+"Count": 3427 
+},
+{
+ "Year": 2012,
+"Type": "Car break-in",
+"Count": 2970 
+},
+{
+ "Year": 2012,
+"Type": "Other",
+"Count": 4118 
+},
+{
+ "Year": 2013,
+"Type": "Car break-in",
+"Count": 3472 
+},
+{
+ "Year": 2013,
+"Type": "Other",
+"Count": 4567 
+},
+{
+ "Year": 2014,
+"Type": "Car break-in",
+"Count": 4353 
+},
+{
+ "Year": 2014,
+"Type": "Other",
+"Count": 4760 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .forceY([      0,   5000 ])
+  .margin({
+ "left":    100 
+})
+          
+        
+
+        
+        chart.yAxis
+  .axisLabel("Number of incidents ")
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+
+//************ Second Chart Noe Valley ****************//
  
  $(document).ready(function(){
       drawchart7ce7037cf7e()
@@ -224,200 +633,6 @@
     };
 
 
-    // ************* Second Chart South of Market *************//
-
-    $(document).ready(function(){
-      drawchart7ce1f1abce2()
-    });
-        function drawchart7ce1f1abce2(){  
-      var opts = {
- "dom": "chart7ce1f1abce2",
-// "width":    800,
-"height":    400,
-"x": "Year",
-"y": "Count",
-"group": "Type",
-"type": "lineChart",
-"id": "chart7ce1f1abce2" 
-},
-        data = [
- {
- "Year": 2003,
-"Type": "Car break-in",
-"Count": 2178 
-},
-{
- "Year": 2003,
-"Type": "Other",
-"Count": 4002 
-},
-{
- "Year": 2004,
-"Type": "Car break-in",
-"Count": 2462 
-},
-{
- "Year": 2004,
-"Type": "Other",
-"Count": 4039 
-},
-{
- "Year": 2005,
-"Type": "Car break-in",
-"Count": 2282 
-},
-{
- "Year": 2005,
-"Type": "Other",
-"Count": 4055 
-},
-{
- "Year": 2006,
-"Type": "Car break-in",
-"Count": 3123 
-},
-{
- "Year": 2006,
-"Type": "Other",
-"Count": 3161 
-},
-{
- "Year": 2007,
-"Type": "Car break-in",
-"Count": 2573 
-},
-{
- "Year": 2007,
-"Type": "Other",
-"Count": 3352 
-},
-{
- "Year": 2008,
-"Type": "Car break-in",
-"Count": 2062 
-},
-{
- "Year": 2008,
-"Type": "Other",
-"Count": 3354 
-},
-{
- "Year": 2009,
-"Type": "Car break-in",
-"Count": 2181 
-},
-{
- "Year": 2009,
-"Type": "Other",
-"Count": 3597 
-},
-{
- "Year": 2010,
-"Type": "Car break-in",
-"Count": 2157 
-},
-{
- "Year": 2010,
-"Type": "Other",
-"Count": 3715 
-},
-{
- "Year": 2011,
-"Type": "Car break-in",
-"Count": 2022 
-},
-{
- "Year": 2011,
-"Type": "Other",
-"Count": 3427 
-},
-{
- "Year": 2012,
-"Type": "Car break-in",
-"Count": 2970 
-},
-{
- "Year": 2012,
-"Type": "Other",
-"Count": 4118 
-},
-{
- "Year": 2013,
-"Type": "Car break-in",
-"Count": 3472 
-},
-{
- "Year": 2013,
-"Type": "Other",
-"Count": 4567 
-},
-{
- "Year": 2014,
-"Type": "Car break-in",
-"Count": 4353 
-},
-{
- "Year": 2014,
-"Type": "Other",
-"Count": 4760 
-} 
-]
-  
-      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
-        var data = d3.nest()
-          .key(function(d){
-            //return opts.group === undefined ? 'main' : d[opts.group]
-            //instead of main would think a better default is opts.x
-            return opts.group === undefined ? opts.y : d[opts.group];
-          })
-          .entries(data);
-      }
-      
-      if (opts.disabled != undefined){
-        data.map(function(d, i){
-          d.disabled = opts.disabled[i]
-        })
-      }
-      
-      nv.addGraph(function() {
-        var chart = nv.models[opts.type]()
-          .width(opts.width)
-          .height(opts.height)
-          
-        if (opts.type != "bulletChart"){
-          chart
-            .x(function(d) { return d[opts.x] })
-            .y(function(d) { return d[opts.y] })
-        }
-          
-         
-        chart
-  .forceY([      0,   5000 ])
-  .margin({
- "left":    100 
-})
-          
-        
-
-        
-        chart.yAxis
-  .axisLabel("Number of incidents ")
-        
-      
-       d3.select("#" + opts.id)
-        .append('svg')
-        .datum(data)
-        .transition().duration(500)
-        .call(chart);
-
-       nv.utils.windowResize(chart.update);
-       return chart;
-      });
-    };
-
-
-
-
     // ************* Third Chart Downtown Civic Center ************//
 
 
@@ -597,6 +812,398 @@
 
         chart.yAxis
   .axisLabel("Number of incidents ")
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+
+    // ************* Fourth Chart Western Addition ************//
+
+ $(document).ready(function(){
+      drawchart7ce70764787()
+    });
+    function drawchart7ce70764787(){  
+      var opts = {
+ "dom": "chart7ce70764787",
+// "width":    800,
+"height":    400,
+"x": "Year",
+"y": "Count",
+"group": "Type",
+"type": "lineChart",
+"id": "chart7ce70764787" 
+},
+        data = [
+ {
+ "Year": 2003,
+"Type": "Car break-in",
+"Count": 1314 
+},
+{
+ "Year": 2003,
+"Type": "Other",
+"Count": 3103 
+},
+{
+ "Year": 2004,
+"Type": "Car break-in",
+"Count": 1142 
+},
+{
+ "Year": 2004,
+"Type": "Other",
+"Count": 2793 
+},
+{
+ "Year": 2005,
+"Type": "Car break-in",
+"Count": 1591 
+},
+{
+ "Year": 2005,
+"Type": "Other",
+"Count": 2968 
+},
+{
+ "Year": 2006,
+"Type": "Car break-in",
+"Count": 1845 
+},
+{
+ "Year": 2006,
+"Type": "Other",
+"Count": 2275 
+},
+{
+ "Year": 2007,
+"Type": "Car break-in",
+"Count": 1478 
+},
+{
+ "Year": 2007,
+"Type": "Other",
+"Count": 1703 
+},
+{
+ "Year": 2008,
+"Type": "Car break-in",
+"Count": 1171 
+},
+{
+ "Year": 2008,
+"Type": "Other",
+"Count": 1829 
+},
+{
+ "Year": 2009,
+"Type": "Car break-in",
+"Count": 1051 
+},
+{
+ "Year": 2009,
+"Type": "Other",
+"Count": 1693 
+},
+{
+ "Year": 2010,
+"Type": "Car break-in",
+"Count": 803 
+},
+{
+ "Year": 2010,
+"Type": "Other",
+"Count": 1571 
+},
+{
+ "Year": 2011,
+"Type": "Car break-in",
+"Count": 1086 
+},
+{
+ "Year": 2011,
+"Type": "Other",
+"Count": 1755 
+},
+{
+ "Year": 2012,
+"Type": "Car break-in",
+"Count": 1449 
+},
+{
+ "Year": 2012,
+"Type": "Other",
+"Count": 2302 
+},
+{
+ "Year": 2013,
+"Type": "Car break-in",
+"Count": 1742 
+},
+{
+ "Year": 2013,
+"Type": "Other",
+"Count": 2485 
+},
+{
+ "Year": 2014,
+"Type": "Car break-in",
+"Count": 2238 
+},
+{
+ "Year": 2014,
+"Type": "Other",
+"Count": 2264 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .forceY([      0,   5000 ])
+  .margin({
+ "left":    100 
+})
+          
+        
+
+        
+        chart.yAxis
+  .axisLabel("Number of incidents ")
+          
+        
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+
+
+
+    //********** Fifith Chart Mission District *********//
+    $(document).ready(function(){
+      drawchart7ce5ffa6b64()
+    });
+    function drawchart7ce5ffa6b64(){  
+      var opts = {
+ "dom": "chart7ce5ffa6b64",
+"width":    800,
+"height":    400,
+"x": "Year",
+"y": "Count",
+"group": "Type",
+"type": "lineChart",
+"id": "chart7ce5ffa6b64" 
+},
+        data = [
+ {
+ "Year": 2003,
+"Type": "Car break-in",
+"Count": 786 
+},
+{
+ "Year": 2003,
+"Type": "Other",
+"Count": 3123 
+},
+{
+ "Year": 2004,
+"Type": "Car break-in",
+"Count": 884 
+},
+{
+ "Year": 2004,
+"Type": "Other",
+"Count": 3105 
+},
+{
+ "Year": 2005,
+"Type": "Car break-in",
+"Count": 841 
+},
+{
+ "Year": 2005,
+"Type": "Other",
+"Count": 3356 
+},
+{
+ "Year": 2006,
+"Type": "Car break-in",
+"Count": 842 
+},
+{
+ "Year": 2006,
+"Type": "Other",
+"Count": 2010 
+},
+{
+ "Year": 2007,
+"Type": "Car break-in",
+"Count": 801 
+},
+{
+ "Year": 2007,
+"Type": "Other",
+"Count": 2004 
+},
+{
+ "Year": 2008,
+"Type": "Car break-in",
+"Count": 829 
+},
+{
+ "Year": 2008,
+"Type": "Other",
+"Count": 2161 
+},
+{
+ "Year": 2009,
+"Type": "Car break-in",
+"Count": 587 
+},
+{
+ "Year": 2009,
+"Type": "Other",
+"Count": 2001 
+},
+{
+ "Year": 2010,
+"Type": "Car break-in",
+"Count": 620 
+},
+{
+ "Year": 2010,
+"Type": "Other",
+"Count": 1980 
+},
+{
+ "Year": 2011,
+"Type": "Car break-in",
+"Count": 819 
+},
+{
+ "Year": 2011,
+"Type": "Other",
+"Count": 2257 
+},
+{
+ "Year": 2012,
+"Type": "Car break-in",
+"Count": 876 
+},
+{
+ "Year": 2012,
+"Type": "Other",
+"Count": 2655 
+},
+{
+ "Year": 2013,
+"Type": "Car break-in",
+"Count": 1146 
+},
+{
+ "Year": 2013,
+"Type": "Other",
+"Count": 2903 
+},
+{
+ "Year": 2014,
+"Type": "Car break-in",
+"Count": 958 
+},
+{
+ "Year": 2014,
+"Type": "Other",
+"Count": 2660 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .forceY([      0,   5000 ])
+  .margin({
+ "left":    100 
+})
+          
+        
+
+        
+        chart.yAxis
+  .axisLabel("Number of incidents ")        
+        
 
         
         
