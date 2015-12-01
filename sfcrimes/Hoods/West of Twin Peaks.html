@@ -1,0 +1,220 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href='/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/css/nv.d3.css'>
+    <link rel='stylesheet' href='/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/css/rNVD3.css'>
+    
+    <script src='/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/js/jquery-1.8.2.min.js' type='text/javascript'></script>
+    <script src='/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/js/d3.v3.min.js' type='text/javascript'></script>
+    <script src='/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/js/nv.d3.min-new.js' type='text/javascript'></script>
+    <script src='/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/js/fisheye.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 800px;
+      height: 400px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart1394bd286bd' class = 'rChart nvd3'></div>    
+    <script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart1394bd286bd()
+    });
+    function drawchart1394bd286bd(){  
+      var opts = {
+ "dom": "chart1394bd286bd",
+"width":    800,
+"height":    400,
+"x": "Year",
+"y": "Count",
+"group": "Type",
+"type": "lineChart",
+"id": "chart1394bd286bd" 
+},
+        data = [
+ {
+ "Year": 2003,
+"Type": "Car break-in",
+"Count": 151 
+},
+{
+ "Year": 2003,
+"Type": "Other",
+"Count": 390 
+},
+{
+ "Year": 2004,
+"Type": "Car break-in",
+"Count": 137 
+},
+{
+ "Year": 2004,
+"Type": "Other",
+"Count": 492 
+},
+{
+ "Year": 2005,
+"Type": "Car break-in",
+"Count": 88 
+},
+{
+ "Year": 2005,
+"Type": "Other",
+"Count": 455 
+},
+{
+ "Year": 2006,
+"Type": "Car break-in",
+"Count": 213 
+},
+{
+ "Year": 2006,
+"Type": "Other",
+"Count": 330 
+},
+{
+ "Year": 2007,
+"Type": "Car break-in",
+"Count": 127 
+},
+{
+ "Year": 2007,
+"Type": "Other",
+"Count": 267 
+},
+{
+ "Year": 2008,
+"Type": "Car break-in",
+"Count": 107 
+},
+{
+ "Year": 2008,
+"Type": "Other",
+"Count": 313 
+},
+{
+ "Year": 2009,
+"Type": "Car break-in",
+"Count": 149 
+},
+{
+ "Year": 2009,
+"Type": "Other",
+"Count": 307 
+},
+{
+ "Year": 2010,
+"Type": "Car break-in",
+"Count": 96 
+},
+{
+ "Year": 2010,
+"Type": "Other",
+"Count": 248 
+},
+{
+ "Year": 2011,
+"Type": "Car break-in",
+"Count": 147 
+},
+{
+ "Year": 2011,
+"Type": "Other",
+"Count": 288 
+},
+{
+ "Year": 2012,
+"Type": "Car break-in",
+"Count": 133 
+},
+{
+ "Year": 2012,
+"Type": "Other",
+"Count": 389 
+},
+{
+ "Year": 2013,
+"Type": "Car break-in",
+"Count": 139 
+},
+{
+ "Year": 2013,
+"Type": "Other",
+"Count": 423 
+},
+{
+ "Year": 2014,
+"Type": "Car break-in",
+"Count": 189 
+},
+{
+ "Year": 2014,
+"Type": "Other",
+"Count": 432 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .forceY([      0,   5000 ])
+  .margin({
+ "left":    100 
+})
+          
+        
+
+        
+        
+        chart.yAxis
+  .axisLabel("Number of incidents ")
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+    
+    <script></script>    
+  </body>
+</html>
