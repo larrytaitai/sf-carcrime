@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>1 Col Portfolio - Start Bootstrap Template</title>
+    <title>San Francisco Car Burglary</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -63,8 +63,7 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Larry Zhou
-                    <small>周泰来</small>
+                <h1 class="page-header">San Francisco’s Epidemic of Car Burglary
                 </h1>
             </div>
         </div>
@@ -73,17 +72,18 @@
         <hr>
 
         <!-- Project One -->
-        <div class="explainer"> San Francisco has experienced a wave of property crimes in the past few years. In this data visualization story, we explore one particular kind of property crimes, car burglary, using the San Francisco Police Department <a href="https://data.sfgov.org/Public-Safety/SFPD-Incidents-from-1-January-2003/tmnf-yvry">crime incidents report data</a> from 2003 to 2014. Property crimes are defined as arson, burglary, larceny/theft and vehicle theft. In this story, property crime incidents are re-grouped into two categories: car burglary and anything else. Overall, the city's car burglary crime incidents rise in proportion with other property crime incidents. But in different neighborhoods, the trend of car burglary varies dramatically.
+        <div class="explainer">
+            San Francisco has experienced a wave of property crimes in the past few years. This data visualization story uses the San Francisco Police Department <a href="https://data.sfgov.org/Public-Safety/SFPD-Incidents-from-1-January-2003/tmnf-yvry">crime incidents report data </a> from 2003 to 2014, comparing burglary from vehicles to all other property crimes — defined as arson, burglary, larceny/theft, and vehicle theft. Overall, the city's car burglary crime incidents have risen roughly in proportion to other property crimes. But in some neighborhoods, it’s a different story.
         </div>
-       
-                <div>
-                                    <h3>San Francisco Car Burglary vs Other Property Crimes</h3>
 
-                    <iframe src="sfcrimes/places/SanFrancisco.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        <div>
+            <h3>San Francisco Car Burglary vs Other Property Crimes</h3>
 
-                </div>
+            <iframe src="sfcrimes/places/SanFrancisco.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
 
-     
+        </div>
+
+
         <!-- /.row -->
 
         <hr>
@@ -91,29 +91,25 @@
         <!-- Density Map -->
         <div class="row">
 
-                <div class="explainer"> Here's the density map of car burglary in San Francisco in 2014.
-                </div>
-                                <h3>San Francisco Car Burglary Density</h3>
+            <h3>City Car Burglary Maps</h3>
+
+            <div class="explainer"> This density map gives a detailed picture of where car break-ins happened in 2014.
+            </div>
 
 
-                <iframe width="100%" height="520" frameborder="0" src="https://larryzhou.cartodb.com/viz/49b6e362-998e-11e5-a02f-0e31c9be1b51/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+            <iframe width="100%" height="520" frameborder="0" src="https://larryzhou.cartodb.com/viz/49b6e362-998e-11e5-a02f-0e31c9be1b51/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+            <!-- /.row -->
+
+
+            <!-- Bubble Chart -->
+            <div class="explainer"> And here are the 2014 numbers by neighborhood. Larger bubbles and darker blues show neighborhoods with more car burglaries.
+            </div>
+
+            <iframe src="Bubble/bubble.html" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">
+            </iframe>
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
-        <hr>
 
-
-
-        <!-- Bubble Chart -->
-        <div class="row">
-
-                <div class="explainer"> Here's how neigbhorhoods compare to each other in terms of car burglary in 2014.
-                </div>
-
-                <iframe src="Bubble/bubble.html" width=100% height="700" frameborder="0" marginheight="0" marginwidth="0">
-                </iframe>
-        </div>
-        <!-- /.row -->
-        <hr>
 
 
 
@@ -121,11 +117,77 @@
 
         <!-- Project Two -->
         <div class="row">
-            <div class="explainer"> In the South of Market Street neighborhood, both car burglary and other property crimes have surged since 2011. But car burglary has been increasing much more quickly than other property crimes. They nearly converged in 2014. South of Market Street is known to be a rough neigbhorhood.
+            <h3>South of Market</h3>
+
+            <div class="explainer"> In 2014, the South of Market Street neighborhood had the highest number of car burglaries among San Francisco’s 37 neighborhoods. In SOMA, both car burglary and other property crimes have surged since 2011. But car burglary has been increasing much more quickly.
             </div>
-                                <h3>South of Market</h3>
+
+            <div>
 
                 <iframe src="sfcrimes/places/SouthofMarket.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+            </div>
+
+
+            <!-- SoMa Map -->
+            <div class="row">
+                <div class="explainer">
+                    This animation shows where those car burglaries happened in 2014.
+
+
+                </div>
+
+
+                <div>
+
+                    <iframe src="CartoDB/Torque.html" width=100% height="520" frameborder="0" marginheight="0" marginwidth="0">
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Five -->
+        <div class="row">
+            <h3>Western Addition</h3>
+
+            <div class="explainer"> There are fewer car burglaries in Western Addition than SOMA, but this neighborhood stands out because car burglaries now account for half of all property crimes.
+            </div>
+
+            <iframe src="sfcrimes/places/WesternAddition.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+        </div>
+        <!-- /.row -->
+        <hr>
+
+        <!-- Project Five -->
+        <div class="row">
+            <h3>Western Addition</h3>
+
+            <div class="explainer"> There are fewer car burglaries in Western Addition than SOMA, but this neighborhood stands out because car burglaries now account for half of all property crimes.
+            </div>
+
+            <iframe src="sfcrimes/places/WesternAddition.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+        </div>
+        <!-- /.row -->
+        <hr>
+
+        <!-- Project Four -->
+        <div class="row">
+            <h3>Downtown-Civic Center</h3>
+
+            <div class="explainer"> Downtown-Civic Center is a high crime area, but here car burglaries are running at less than half the rate of other property crimes.
+
+
+            </div>
+
+            <iframe src="sfcrimes/places/Downtown-CivicCenter.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+
         </div>
         <!-- /.row -->
 
@@ -134,197 +196,139 @@
         <!-- Project Three -->
         <div class="row">
 
+            <h3>Noe Valley</h3>
 
-            <div class="explainer"> In Noe Valley neighborhood, the number of car burglary and other property crimes remained more or less the same in the past very years. In fact, car burglary decreased a little from 156 in 2010 to 112 in 2014. Noe Valley is known to be a wealthier neigbhorhood.
+            <div class="explainer"> Still, in some neighborhoods, such as Noe Valley, car burglary rates are low, and have not increased.
             </div>
-                <h3>Noe Valley</h3>
 
-                <iframe src="sfcrimes/places/NoeValley.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+            <iframe src="sfcrimes/places/NoeValley.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
 
-           
+
         </div>
         <!-- /.row -->
 
-        <hr>
-
-        <!-- Project Four -->
-        <div class="row">
-            <div class="explainer"> Like SoMa, Downtown-Civic Center neighorbhood is known to have a higher crime rate, and we do see both car burglary and other property crimes increased signifciantly since 2011. But car burglary is less than half of other property crimes.
-
-
-            </div>
-                <h3>Downtown-Civic Center</h3>
-
-                <iframe src="sfcrimes/places/Downtown-CivicCenter.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-
-          
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Five -->
-        <div class="row">
-            <div class="explainer"> In Western Addition neighborhood, car burglary has increased steadily over the years from 2010 to 2014. Car burglary incident number finally converged with the number of other property crime incidents in the neigbhorhood in 2014. It means Half of the property crimes in Western Addition is breaking into a car and grabbing something.
-            </div>
-                <h3>Western Addition</h3>
-
-                <iframe src="sfcrimes/places/WesternAddition.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-
-        </div>
-        <!-- /.row -->
         <hr>
 
 
 
         <!-- Project Six -->
         <div class="row">
-            <div class="explainer"> So how's your own neigbhorhood? Do you wake up every morning worried about if your car's window is shattered? Take a look here about the car burglary trend in your own neigbhorhood.
+            <h3>Select your own neighborhood</h3>
+
+            <div class="explainer"> Do you wake up every morning worried that your car's windows will be shattered? Take a look at the property crime trends for your neighborhood with these charts.
             </div>
-                <script type="text/javascript">
-                    function setIframeSource() {
-                        var theSelect = document.getElementById('location');
-                        var theIframe = document.getElementById('myIframe');
-                        var theUrl;
+            <script type="text/javascript">
+                function setIframeSource() {
+                    var theSelect = document.getElementById('location');
+                    var theIframe = document.getElementById('myIframe');
+                    var theUrl;
 
-                        theUrl = theSelect.options[theSelect.selectedIndex].value;
-                        theIframe.src = theUrl;
-                    }
-                </script>
-
-
-
-                <label style="position:center">
-                    Select Your Own Neighborhood:
-
-                    <select name="location" id="location" onChange="setIframeSource()">
-                        <option VALUE="sfcrimes/places/Bayview.html">Bayview</option>
-                        <option VALUE="sfcrimes/places/BernalHeights.html">Bernal Heights</option>
-                        <option VALUE="sfcrimes/places/Castro-UpperMarket.html">Castro-Upper Market</option>
-                        <option VALUE="sfcrimes/places/Chinatown.html">Chinatown</option>
-                        <option VALUE="sfcrimes/places/CrockerAmazon.html">CrockerAmazon</option>
-                        <option VALUE="sfcrimes/places/DiamondHeights.html">DiamondHeights</option>
-                        <option VALUE="sfcrimes/places/Downtown-CivicCenter.html">Downtown-Civic Center</option>
-                        <option VALUE="sfcrimes/places/Excelsior.html">Excelsior</option>
-                        <option VALUE="sfcrimes/places/FinancialDistrict.html">Financial District</option>
-                        <option VALUE="sfcrimes/places/GlenPark.html">Glen Park</option>
-                        <option VALUE="sfcrimes/places/GoldenGatePark.html">Golden Gate Park</option>
-                        <option VALUE="sfcrimes/places/HaightAshbury.html">Haight Ashbury</option>
-                        <option VALUE="sfcrimes/places/InnerRichmond.html">Inner Richmond</option>
-                        <option VALUE="sfcrimes/places/InnerSunset.html">Inner Sunset</option>
-                        <option VALUE="sfcrimes/places/Lakeshore.html">Lakeshore</option>
-                        <option VALUE="sfcrimes/places/Marina.html">Marina</option>
-                        <option VALUE="sfcrimes/places/Mission.html">Mission</option>
-                        <option VALUE="sfcrimes/places/NobHill.html">Nob Hill</option>
-
-                        <option VALUE="sfcrimes/places/NoeValley.html">Noe Valley</option>
-
-                        <option VALUE="sfcrimes/places/NorthBeach.html">North Beach</option>
-
-                        <option VALUE="sfcrimes/places/OceanView.html">Ocean View</option>
-
-                        <option VALUE="sfcrimes/places/OuterMission.html">Outer Mission</option>
-
-                        <option VALUE="sfcrimes/places/OuterRichmond.html">Outer Richmond</option>
-
-                        <option VALUE="sfcrimes/places/OuterSunset.html">Outer Sunset</option>
-
-                        <option VALUE="sfcrimes/places/PacificHeights.html">Pacific Heights</option>
-
-                        <option VALUE="sfcrimes/places/Parkside.html">Parkside</option>
-
-                        <option VALUE="sfcrimes/places/Potrero Hill.html">Potrero Hill</option>
-
-                        <option VALUE="sfcrimes/places/Presidio.html">Presidio</option>
-
-                        <option VALUE="sfcrimes/places/PresidioHeights.html">Presidio Heights</option>
-
-                        <option VALUE="sfcrimes/places/Russian Hill.html">Russian Hill</option>
-
-                        <option VALUE="sfcrimes/places/Seacliff.html">Seacliff</option>
-
-                        <option VALUE="sfcrimes/places/SouthofMarket.html">South of Market</option>
-
-                        <option VALUE="sfcrimes/places/TreasureIsland-YBI.html">Treasure Island-YBI</option>
-
-                        <option VALUE="sfcrimes/places/TwinPeaks.html">Twin Peaks</option>
-
-                        <option VALUE="sfcrimes/places/VisitacionValley.html">Visitacion Valley</option>
-
-                        <option VALUE="sfcrimes/places/WesternAddition.html">Western Addition</option>
-
-                        <option VALUE="sfcrimes/places/WestofTwinPeaks.html">West of Twin Peaks</option>
+                    theUrl = theSelect.options[theSelect.selectedIndex].value;
+                    theIframe.src = theUrl;
+                }
+            </script>
 
 
 
-                    </select>
-                </label>
+            <label style="position:center">
+                My Neighborhood:
 
-                <h3>Select your own neigborhood</h3>
+                <select name="location" id="location" onChange="setIframeSource()">
+                    <option VALUE="sfcrimes/places/Bayview.html">Bayview</option>
+                    <option VALUE="sfcrimes/places/BernalHeights.html">Bernal Heights</option>
+                    <option VALUE="sfcrimes/places/Castro-UpperMarket.html">Castro-Upper Market</option>
+                    <option VALUE="sfcrimes/places/Chinatown.html">Chinatown</option>
+                    <option VALUE="sfcrimes/places/CrockerAmazon.html">CrockerAmazon</option>
+                    <option VALUE="sfcrimes/places/DiamondHeights.html">DiamondHeights</option>
+                    <option VALUE="sfcrimes/places/Downtown-CivicCenter.html">Downtown-Civic Center</option>
+                    <option VALUE="sfcrimes/places/Excelsior.html">Excelsior</option>
+                    <option VALUE="sfcrimes/places/FinancialDistrict.html">Financial District</option>
+                    <option VALUE="sfcrimes/places/GlenPark.html">Glen Park</option>
+                    <option VALUE="sfcrimes/places/GoldenGatePark.html">Golden Gate Park</option>
+                    <option VALUE="sfcrimes/places/HaightAshbury.html">Haight Ashbury</option>
+                    <option VALUE="sfcrimes/places/InnerRichmond.html">Inner Richmond</option>
+                    <option VALUE="sfcrimes/places/InnerSunset.html">Inner Sunset</option>
+                    <option VALUE="sfcrimes/places/Lakeshore.html">Lakeshore</option>
+                    <option VALUE="sfcrimes/places/Marina.html">Marina</option>
+                    <option VALUE="sfcrimes/places/Mission.html">Mission</option>
+                    <option VALUE="sfcrimes/places/NobHill.html">Nob Hill</option>
 
-                <iframe id="myIframe" src="sfcrimes/places/WesternAddition.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+                    <option VALUE="sfcrimes/places/NoeValley.html">Noe Valley</option>
 
-         
+                    <option VALUE="sfcrimes/places/NorthBeach.html">North Beach</option>
+
+                    <option VALUE="sfcrimes/places/OceanView.html">Ocean View</option>
+
+                    <option VALUE="sfcrimes/places/OuterMission.html">Outer Mission</option>
+
+                    <option VALUE="sfcrimes/places/OuterRichmond.html">Outer Richmond</option>
+
+                    <option VALUE="sfcrimes/places/OuterSunset.html">Outer Sunset</option>
+
+                    <option VALUE="sfcrimes/places/PacificHeights.html">Pacific Heights</option>
+
+                    <option VALUE="sfcrimes/places/Parkside.html">Parkside</option>
+
+                    <option VALUE="sfcrimes/places/Potrero Hill.html">Potrero Hill</option>
+
+                    <option VALUE="sfcrimes/places/Presidio.html">Presidio</option>
+
+                    <option VALUE="sfcrimes/places/PresidioHeights.html">Presidio Heights</option>
+
+                    <option VALUE="sfcrimes/places/Russian Hill.html">Russian Hill</option>
+
+                    <option VALUE="sfcrimes/places/Seacliff.html">Seacliff</option>
+
+                    <option VALUE="sfcrimes/places/SouthofMarket.html">South of Market</option>
+
+                    <option VALUE="sfcrimes/places/TreasureIsland-YBI.html">Treasure Island-YBI</option>
+
+                    <option VALUE="sfcrimes/places/TwinPeaks.html">Twin Peaks</option>
+
+                    <option VALUE="sfcrimes/places/VisitacionValley.html">Visitacion Valley</option>
+
+                    <option VALUE="sfcrimes/places/WesternAddition.html">Western Addition</option>
+
+                    <option VALUE="sfcrimes/places/WestofTwinPeaks.html">West of Twin Peaks</option>
+
+
+
+                </select>
+            </label>
+
+            <iframe id="myIframe" src="sfcrimes/places/WesternAddition.html" width=100% height="400" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+
         </div>
         <!-- /.row -->
         <hr>
 
-
-        <!-- SoMa Map -->
-        <div class="row">
-                <div class="explainer">
-                    In South of Market Street neigbhorhood, car burglary seems to happen everywhere without concentrating in certain blocks. But there were a lot more incidents this few years than before.
-
-
-                </div>
-
-                                <h3>South of Market</h3>
-
-                <div>
-
-                <iframe src="CartoDB/Torque.html" width=100% height="700" frameborder="0" marginheight="0" marginwidth="0">
-                    
-                </div>
-        
-        </div>
-        <!-- /.row -->
-
-
-
-
-
-
-
-
-
-
-        <hr>
 
         <!-- Pagination -->
         <div class="row text-center">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
+            <ul class="pagination">
+                <li>
+                    <a href="#">&laquo;</a>
+                </li>
+                <li class="active">
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">&raquo;</a>
+                </li>
+            </ul>
         </div>
         <!-- /.row -->
 
